@@ -17,7 +17,7 @@ class SignUpPage extends StatelessWidget {
           padding: const EdgeInsets.all(24.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: [ 
+            children: [
               Container(
                 decoration: BoxDecoration(
                   boxShadow: [
@@ -30,7 +30,10 @@ class SignUpPage extends StatelessWidget {
                 ),
                 width: 200,
                 height: 50,
-                child: Image.asset('assets/starter/nilecare_nobg.png',fit: BoxFit.cover,),
+                child: Image.asset(
+                  'assets/logo/nilecare_nobg.png',
+                  fit: BoxFit.cover,
+                ),
               ),
               const SizedBox(height: 20),
               Text(
@@ -54,7 +57,10 @@ class SignUpPage extends StatelessWidget {
               const SizedBox(height: 20),
               AppTextField(labelText: 'Create strong password'),
               const SizedBox(height: 40),
-              PrimaryButton(label: 'Create Account'),
+              PrimaryButton(
+                label: 'Create Account',
+                onPressed: () => context.go('/home'),
+              ),
               const SizedBox(height: 20),
               // line
               const Divider(),

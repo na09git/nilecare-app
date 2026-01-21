@@ -30,7 +30,7 @@ class SignInPage extends StatelessWidget {
                 ),
                 width: 200,
                 height: 50,
-                child: Image.asset('assets/starter/nilecare_nobg.png',fit: BoxFit.cover,),
+                child: Image.asset('assets/logo/nilecare_nobg.png',fit: BoxFit.cover,),
               ),
               const SizedBox(height: 20),
               Text(
@@ -58,7 +58,7 @@ class SignInPage extends StatelessWidget {
               ),
               const SizedBox(height: 40),
               PrimaryButton(label: 'Sign in', onPressed: () {
-                context.push('/main');
+                context.go('/home');
               },),
               const SizedBox(height: 20),
               const Divider(),

@@ -123,7 +123,7 @@ class _OnboardingState extends State<Onboarding> {
               top: MediaQuery.of(context).padding.top + 20,
               right: 20,
               child: TextButton(
-                onPressed: () => context.go('/login'),
+                onPressed: () => context.go('/signin'),
                 child: Text(
                   'Skip',
                   style: GoogleFonts.outfit(
@@ -182,7 +182,7 @@ class _OnboardingState extends State<Onboarding> {
                       width: double.infinity,
                       height: 64,
                       child: ElevatedButton(
-                        onPressed: () => context.go('/login'),
+                        onPressed: () => context.go('/signin'),
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.white,
                           foregroundColor: Colors.black,

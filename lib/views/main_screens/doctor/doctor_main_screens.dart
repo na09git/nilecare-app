@@ -4,16 +4,16 @@ import 'package:nilecare/utils/constants/colors.dart';
 import 'package:nilecare/views/common_ui_widgets/drawer.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 
-class MainScreens extends StatefulWidget {
-  const MainScreens({required this.navigationShell, super.key});
+class DoctorMainScreens extends StatefulWidget {
+  const DoctorMainScreens({required this.navigationShell, super.key});
 
   final StatefulNavigationShell navigationShell;
 
   @override
-  State<MainScreens> createState() => _MainScreensState();
+  State<DoctorMainScreens> createState() => _DoctorMainScreensState();
 }
 
-class _MainScreensState extends State<MainScreens> {
+class _DoctorMainScreensState extends State<DoctorMainScreens> {
   bool isDarkMode = false;
 
   void toggleTheme() {
@@ -79,25 +79,21 @@ class _MainScreensState extends State<MainScreens> {
             title: Text("Home"),
             selectedColor: Colors.purple,
           ),
-
           SalomonBottomBarItem(
-            icon: Icon(Icons.person_2),
-            title: Text("Doctors"),
+            icon: Icon(Icons.calendar_today),
+            title: Text("Appointments"),
             selectedColor: Colors.pink,
           ),
-
           SalomonBottomBarItem(
-            icon: Icon(Icons.medical_services),
-            title: Text("Services"),
+            icon: Icon(Icons.schedule),
+            title: Text("Schedule"),
             selectedColor: Colors.orange,
           ),
-
           SalomonBottomBarItem(
-            icon: Icon(Icons.inbox),
-            title: Text("Inbox"),
-            selectedColor: Colors.pink,
+            icon: Icon(Icons.people),
+            title: Text("Patients"),
+            selectedColor: Colors.blue,
           ),
-
           SalomonBottomBarItem(
             icon: Icon(Icons.person),
             title: Text("Profile"),
