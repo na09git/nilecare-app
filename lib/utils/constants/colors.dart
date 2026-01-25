@@ -7,12 +7,24 @@ class AppColor {
 
 class _LightColors {
   const _LightColors();
-  final Color themeColor = const Color.fromARGB(255, 237, 251, 251);
-  final Color background = const Color.fromARGB(255, 37, 150, 190);
+  final Color themeColor = const Color(0xFF0F172A); // Primary
+  final Color background = const Color(0xFFFFFFFF);
+  final Color text = const Color(0xFF010816);
+  final Color secondary = const Color(0xFFF1F5F9);
+  final Color accent = const Color(0xFFF1F5F9);
+  final Color border = const Color(0xFFE2E8F0);
+  final Color error = const Color(0xFFEE4444);
+  final Color primary = const Color(0xFF0F172A);
 }
 
 class _DarkColors {
   const _DarkColors();
-  final Color themeColor = const Color.fromARGB(255, 14, 21, 40);
-  final Color background = const Color.fromARGB(255, 31, 79, 79);
+  final Color themeColor = const Color(0xFFF7F9FB); // Primary
+  final Color background = const Color(0xFF010816); // Very dark blue
+  final Color text = const Color(0xFFF7F9FB);
+  final Color secondary = const Color(0xFF1E293B);
+  final Color accent = const Color(0xFF1E293B);
+  final Color border = const Color(0xFF1E293B);
+  final Color error = const Color(0xFF7F1D1D);
+  final Color primary = const Color(0xFFF7F9FB);
 }
