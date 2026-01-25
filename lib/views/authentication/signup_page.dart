@@ -5,16 +5,19 @@ import 'package:nilecare/views/authentication/widget/textfield.dart';
 import 'package:nilecare/views/common_ui_widgets/primary_button.dart';
 import 'package:nilecare/views/common_ui_widgets/social_media.dart';
 
+import 'package:nilecare/utils/constants/colors.dart';
+
 class SignUpPage extends StatelessWidget {
   const SignUpPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColor.dark.background,
       resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.all(24.0),
+          padding: const EdgeInsets.symmetric(horizontal: 24.0,vertical: 50),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -22,14 +25,13 @@ class SignUpPage extends StatelessWidget {
                 decoration: BoxDecoration(
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.white54,
-                      blurRadius: 10,
-                      offset: const Offset(0, 5),
+                      color: Colors.white,
+                      blurRadius: 5,
                     ),
                   ],
                 ),
-                width: 200,
-                height: 50,
+                width: 100,
+                height: 40,
                 child: Image.asset(
                   'assets/logo/nilecare_nobg.png',
                   fit: BoxFit.cover,
@@ -41,6 +43,7 @@ class SignUpPage extends StatelessWidget {
                 style: GoogleFonts.outfit(
                   fontSize: 32,
                   fontWeight: FontWeight.bold,
+                  color: AppColor.dark.text,
                 ),
               ),
               const SizedBox(height: 8),
@@ -48,7 +51,7 @@ class SignUpPage extends StatelessWidget {
                 'Join NileCare and take control of your healthcare journey',
                 style: GoogleFonts.outfit(fontSize: 16, color: Colors.grey),
               ),
-              const SizedBox(height: 40),
+              const SizedBox(height: 20),
               AppTextField(labelText: 'Enter your full name'),
               const SizedBox(height: 20),
               AppTextField(labelText: 'Enter your email'),
@@ -62,39 +65,13 @@ class SignUpPage extends StatelessWidget {
                 onPressed: () => context.go('/home'),
               ),
               const SizedBox(height: 20),
-              // line
-              const Divider(),
-              const SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  SocialButton(
-                    icon: Icons.facebook,
-                    backgroundColor: const Color(0xFF4267B2),
-                    onPressed: () {},
-                  ),
-                  const SizedBox(width: 20),
-                  SocialButton(
-                    icon: Icons.telegram,
-                    backgroundColor: const Color(0xFF4267B2),
-                    onPressed: () {},
-                  ),
-                  const SizedBox(width: 20),
-                  SocialButton(
-                    icon: Icons.apple,
-                    backgroundColor: const Color(0xFF4267B2),
-                    onPressed: () {},
-                  ),
-                ],
-              ),
-              const SizedBox(height: 20),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Text("Already have an account ?"),
+                  Text("Already have an account ? ",style: TextStyle(color: AppColor.dark.text),),
                   GestureDetector(
                     onTap: () => context.pop(),
-                    child: const Text(
+                    child: Text(
                       'Sign in',
                       style: TextStyle(
                         color: Color(0xFF2E7CF6),
