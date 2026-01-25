@@ -1,30 +1,41 @@
 import 'package:go_router/go_router.dart';
+
+
+// drawer screens
+import 'package:nilecare/views/drawer_screens/appointments_page.dart';
+import 'package:nilecare/views/drawer_screens/payments_page.dart';
+
+
+// autnetication pages
 import 'package:nilecare/views/authentication/forgot_password_page.dart';
 import 'package:nilecare/views/authentication/signin_page.dart';
 import 'package:nilecare/views/authentication/signup_page.dart';
-import 'package:nilecare/views/main_screens/patient/home_page.dart';
-import 'package:nilecare/views/main_screens/patient/doctors_page.dart';
-import 'package:nilecare/views/main_screens/main_screens.dart';
-import 'package:nilecare/views/main_screens/patient/services_page.dart';
-import 'package:nilecare/views/main_screens/patient/profile_page.dart';
 import 'package:nilecare/views/onboarding/onboarding.dart';
-import 'package:nilecare/views/drawer_screens/appointments_page.dart';
-import 'package:nilecare/views/drawer_screens/payments_page.dart';
-import 'package:nilecare/views/system_screens/inbox_page.dart';
+
+// system screens
 import 'package:nilecare/views/system_screens/doctor_videos_page.dart';
 import 'package:nilecare/views/system_screens/sales_page.dart';
 import 'package:nilecare/views/system_screens/doctor_datail.dart';
 import 'package:nilecare/views/system_screens/symptoms_page.dart';
 import 'package:nilecare/views/system_screens/specialities_page.dart';
 
+
+// patients page
+import 'package:nilecare/views/main_screens/patient/home_page.dart';
+import 'package:nilecare/views/main_screens/patient/doctors_page.dart';
+import 'package:nilecare/views/main_screens/patient_main_screens.dart';
+import 'package:nilecare/views/main_screens/patient/services_page.dart';
+import 'package:nilecare/views/main_screens/patient/profile_page.dart';
+import 'package:nilecare/views/main_screens/patient/inbox_page.dart';
+
 // Doctor screens
 import 'package:nilecare/views/main_screens/doctor/home_page.dart' as doctor;
 import 'package:nilecare/views/main_screens/doctor/appointments_page.dart';
 import 'package:nilecare/views/main_screens/doctor/schedule_page.dart';
 import 'package:nilecare/views/main_screens/doctor/patients_page.dart';
-import 'package:nilecare/views/main_screens/doctor/profile_page.dart'
-    as doctor_profile;
-import 'package:nilecare/views/main_screens/doctor/doctor_main_screens.dart';
+import 'package:nilecare/views/main_screens/doctor/profile_page.dart' as doctor_profile;
+import 'package:nilecare/views/main_screens/doctor_main_screens.dart';
+import 'package:nilecare/views/main_screens/doctor/inbox_page.dart';
 
 // Admin screens
 import 'package:nilecare/views/main_screens/admin/admin_home_page.dart';
@@ -50,7 +61,7 @@ class AppRouter {
         path: '/payments',
         builder: (context, state) => const PaymentsPage(),
       ),
-      GoRoute(path: '/inbox', builder: (context, state) => const InboxPage()),
+      GoRoute(path: '/inbox', builder: (context, state) => const PatientInboxPage()),
       GoRoute(
         path: '/doctor-videos',
         builder: (context, state) => const DoctorVideosPage(),
@@ -69,6 +80,9 @@ class AppRouter {
         builder: (context, state) => const SpecialitiesPage(),
       ),
       GoRoute(path: '/logout', builder: (context, state) => const SignInPage()),
+
+
+
 
       // Main app shell with bottom navigation
       StatefulShellRoute.indexedStack(
@@ -108,7 +122,7 @@ class AppRouter {
             routes: [
               GoRoute(
                 path: '/inbox-tab',
-                builder: (context, state) => const InboxPage(),
+                builder: (context, state) => const PatientInboxPage(),
               ),
             ],
           ),
