@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:nilecare/utils/constants/colors/colors.dart';
-import 'package:nilecare/views/common_ui_widgets/drawer.dart';
+import 'package:nilecare/core/constants/colors.dart';
+import 'package:nilecare/widgets/drawer.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 
 class MainScreens extends StatefulWidget {

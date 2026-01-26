@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:nilecare/views/authentication/widget/textfield.dart';
-import 'package:nilecare/views/common_ui_widgets/primary_button.dart';
-import 'package:nilecare/views/common_ui_widgets/social_media.dart';
+import 'package:nilecare/widgets/app_textfield.dart';
 
-class SignUpPage extends StatelessWidget {
-  const SignUpPage({super.key});
+import 'package:nilecare/widgets/primary_button.dart';
+import 'package:nilecare/widgets/social_media.dart';
+
+class SignInPage extends StatelessWidget {
+  const SignInPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +18,7 @@ class SignUpPage extends StatelessWidget {
           padding: const EdgeInsets.all(24.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: [ 
+            children: [
               Container(
                 decoration: BoxDecoration(
                   boxShadow: [
@@ -34,7 +35,7 @@ class SignUpPage extends StatelessWidget {
               ),
               const SizedBox(height: 20),
               Text(
-                'Create Account',
+                'Welcome Back',
                 style: GoogleFonts.outfit(
                   fontSize: 32,
                   fontWeight: FontWeight.bold,
@@ -42,21 +43,25 @@ class SignUpPage extends StatelessWidget {
               ),
               const SizedBox(height: 8),
               Text(
-                'Join NileCare and take control of your healthcare journey',
+                'Sign in to access your healthcare account',
                 style: GoogleFonts.outfit(fontSize: 16, color: Colors.grey),
               ),
               const SizedBox(height: 40),
-              AppTextField(labelText: 'Enter your full name'),
-              const SizedBox(height: 20),
               AppTextField(labelText: 'Enter your email'),
               const SizedBox(height: 20),
-              AppTextField(labelText: 'Enter yourphone number'),
-              const SizedBox(height: 20),
-              AppTextField(labelText: 'Create strong password'),
+              AppTextField(labelText: 'Password'),
+              Align(
+                alignment: Alignment.centerLeft,
+                child: TextButton(
+                  onPressed: () => context.push('/forgot-password'),
+                  child: const Text('Forgot Password ?'),
+                ),
+              ),
               const SizedBox(height: 40),
-              PrimaryButton(label: 'Create Account'),
+              PrimaryButton(label: 'Sign in', onPressed: () {
+                context.push('/main');
+              },),
               const SizedBox(height: 20),
-              // line
               const Divider(),
               const SizedBox(height: 20),
               Row(
@@ -85,11 +90,11 @@ class SignUpPage extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Text("Already have an account ?"),
+                  const Text("Don't have an account? "),
                   GestureDetector(
-                    onTap: () => context.pop(),
+                    onTap: () => context.push('/signup'),
                     child: const Text(
-                      'Sign in',
+                      'Create Account',
                       style: TextStyle(
                         color: Color(0xFF2E7CF6),
                         fontWeight: FontWeight.bold,

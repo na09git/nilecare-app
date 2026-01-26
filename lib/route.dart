@@ -1,7 +1,7 @@
 import 'package:go_router/go_router.dart';
-import 'package:nilecare/views/authentication/forgot_password_page.dart';
-import 'package:nilecare/views/authentication/signin_page.dart';
-import 'package:nilecare/views/authentication/signup_page.dart';
+import 'package:nilecare/auth/presentaion/pages/forgot_password_page.dart';
+import 'package:nilecare/auth/presentaion/pages/signin_page.dart';
+import 'package:nilecare/auth/presentaion/pages/signup_page.dart';
 import 'package:nilecare/views/main_screens/home_page.dart';
 import 'package:nilecare/views/main_screens/activity_page.dart';
 import 'package:nilecare/views/main_screens/doctors_page.dart';

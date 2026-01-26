@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:nilecare/views/authentication/widget/textfield.dart';
-import 'package:nilecare/views/common_ui_widgets/primary_button.dart';
+import 'package:nilecare/widgets/app_textfield.dart';
+
+import 'package:nilecare/widgets/primary_button.dart';
 import 'package:go_router/go_router.dart';
 
 class ForgotPasswordPage extends StatefulWidget {
@@ -130,7 +131,9 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
       case 0:
         return _stepEmail();
       case 1:
+
         return _stepOTP();
+
       case 2:
         return _stepNewPassword();
       default:
@@ -225,6 +228,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
     return Column(
       children: [
         const Icon(
+          
           Icons.lock_reset_outlined,
           size: 64,
           color: Color(0xFF2E7CF6),

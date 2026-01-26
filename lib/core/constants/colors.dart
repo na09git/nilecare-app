@@ -5,6 +5,7 @@ class AppColor {
   static const dark = _DarkColors();
 }
 
+
 class _LightColors {
   const _LightColors();
   final Color themeColor = const Color.fromARGB(255, 237, 251, 251);
