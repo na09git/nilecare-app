@@ -138,7 +138,7 @@ class _SignUpPageState extends State<SignUpPage> {
                       elevation: 2,
                     ),
                     child: Text(
-                      'Create Account', 
+                      'Create Account',
                       style: GoogleFonts.outfit(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,

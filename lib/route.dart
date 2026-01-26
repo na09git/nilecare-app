@@ -1,15 +1,15 @@
 import 'package:go_router/go_router.dart';
+import 'package:nilecare/auth/presentaion/pages/verify_email.dart';
 
 // drawer screens
 import 'package:nilecare/views/drawer_screens/appointments_page.dart';
 import 'package:nilecare/views/drawer_screens/payments_page.dart';
 
 // autnetication pages
-import 'package:nilecare/views/authentication/forgot_password_page.dart';
-import 'package:nilecare/views/authentication/signin_page.dart';
-import 'package:nilecare/views/authentication/signup_page.dart';
-import 'package:nilecare/views/authentication/verify_email_page.dart';
-import 'package:nilecare/views/welcome/welcome_screen.dart';
+import 'package:nilecare/auth/presentaion/pages/welcome_screen.dart';
+import 'package:nilecare/auth/presentaion/pages/forgot_password.dart';
+import 'package:nilecare/auth/presentaion/pages/signup.dart';
+import 'package:nilecare/auth/presentaion/pages/signin.dart';
 
 // system screens
 import 'package:nilecare/views/system_screens/doctor_videos_page.dart';

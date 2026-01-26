@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:animated_notch_bottom_bar/animated_notch_bottom_bar/animated_notch_bottom_bar.dart';
-import 'package:nilecare/utils/constants/colors.dart';
-import 'package:nilecare/views/common_ui_widgets/drawer.dart';
+import 'package:nilecare/auth/core/constant/colors.dart';
+import 'package:nilecare/widgets/drawer.dart';
 
 class DoctorMainScreens extends StatefulWidget {
   const DoctorMainScreens({required this.navigationShell, super.key});

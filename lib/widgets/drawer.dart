@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nilecare/utils/constants/colors.dart';
+import 'package:nilecare/auth/core/constant/colors.dart';
 
 class AppDrawer extends StatelessWidget {
   final bool isDarkMode;
@@ -18,8 +18,6 @@ class AppDrawer extends StatelessWidget {
     final bgColor = isDarkMode
         ? AppColor.dark.secondary
         : AppColor.light.background;
-    final textColor = isDarkMode ? AppColor.dark.text : AppColor.light.text;
-    final iconColor = isDarkMode ? AppColor.dark.text : AppColor.light.text;
 
     return Drawer(
       backgroundColor: bgColor,
@@ -33,55 +31,12 @@ class AppDrawer extends StatelessWidget {
           ),
 
           // Drawer items
-          _item(
-            Icons.person_outline,
-            "Profile",
-            "/profile",
-            textColor,
-            iconColor,
-          ),
-          _item(
-            Icons.calendar_today_outlined,
-            "My Appointments",
-            "/appointments",
-            textColor,
-            iconColor,
-          ),
-          _item(Icons.inbox_outlined, "Inbox", "/inbox", textColor, iconColor),
-          _item(
-            Icons.video_library_outlined,
-            "Videos",
-            "/doctor-videos",
-            textColor,
-            iconColor,
-          ),
-
-          Divider(
-            color: isDarkMode ? AppColor.dark.border : AppColor.light.border,
-          ),
-
-          _item(Icons.logout, "Logout", "/logout", textColor, iconColor),
         ],
       ),
     );
   }
-
-  Widget _item(
-    IconData icon,
-    String title,
-    String route,
-    Color textColor,
-    Color iconColor,
-  ) {
-    return ListTile(
-      leading: Icon(icon, color: iconColor),
-      title: Text(title, style: TextStyle(color: textColor)),
-      onTap: () => onNavigate(route),
-    );
-  }
 }
 
-// ---------------- Custom Drawer Header ----------------
 class _CustomDrawerHeader extends StatelessWidget {
   final bool isDarkMode;
   final VoidCallback onToggleTheme;

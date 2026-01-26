@@ -68,6 +68,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
         return _stepEmail();
       case 1:
         return _stepOTP();
+
       case 2:
         return _stepNewPassword();
       default:
@@ -265,7 +266,6 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
       ],
     );
   }
-
 
   Widget _buildTextField({
     required TextEditingController controller,

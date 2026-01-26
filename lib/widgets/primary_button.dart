@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nilecare/utils/constants/colors.dart';
+import 'package:nilecare/auth/core/constant/colors.dart';
 
 class PrimaryButton extends StatelessWidget {
   final String label;
