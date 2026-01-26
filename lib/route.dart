@@ -1,16 +1,15 @@
 import 'package:go_router/go_router.dart';
 
-
 // drawer screens
 import 'package:nilecare/views/drawer_screens/appointments_page.dart';
 import 'package:nilecare/views/drawer_screens/payments_page.dart';
-
 
 // autnetication pages
 import 'package:nilecare/views/authentication/forgot_password_page.dart';
 import 'package:nilecare/views/authentication/signin_page.dart';
 import 'package:nilecare/views/authentication/signup_page.dart';
-import 'package:nilecare/views/onboarding/onboarding.dart';
+import 'package:nilecare/views/authentication/verify_email_page.dart';
+import 'package:nilecare/views/welcome/welcome_screen.dart';
 
 // system screens
 import 'package:nilecare/views/system_screens/doctor_videos_page.dart';
@@ -18,7 +17,6 @@ import 'package:nilecare/views/system_screens/sales_page.dart';
 import 'package:nilecare/views/system_screens/doctor_datail.dart';
 import 'package:nilecare/views/system_screens/symptoms_page.dart';
 import 'package:nilecare/views/system_screens/specialities_page.dart';
-
 
 // patients page
 import 'package:nilecare/views/main_screens/patient/home_page.dart';
@@ -33,9 +31,9 @@ import 'package:nilecare/views/main_screens/doctor/home_page.dart' as doctor;
 import 'package:nilecare/views/main_screens/doctor/appointments_page.dart';
 import 'package:nilecare/views/main_screens/doctor/schedule_page.dart';
 import 'package:nilecare/views/main_screens/doctor/patients_page.dart';
-import 'package:nilecare/views/main_screens/doctor/profile_page.dart' as doctor_profile;
+import 'package:nilecare/views/main_screens/doctor/profile_page.dart'
+    as doctor_profile;
 import 'package:nilecare/views/main_screens/doctor_main_screens.dart';
-import 'package:nilecare/views/main_screens/doctor/inbox_page.dart';
 
 // Admin screens
 import 'package:nilecare/views/main_screens/admin/admin_home_page.dart';
@@ -44,12 +42,16 @@ class AppRouter {
   static final router = GoRouter(
     initialLocation: '/',
     routes: [
-      GoRoute(path: '/', builder: (context, state) => const Onboarding()),
+      GoRoute(path: '/', builder: (context, state) => const WelcomeScreen()),
       GoRoute(path: '/signin', builder: (context, state) => const SignInPage()),
       GoRoute(path: '/signup', builder: (context, state) => const SignUpPage()),
       GoRoute(
         path: '/forgot-password',
         builder: (context, state) => const ForgotPasswordPage(),
+      ),
+      GoRoute(
+        path: '/verify-email',
+        builder: (context, state) => const VerifyEmailPage(),
       ),
 
       // Drawer navigation routes
@@ -61,7 +63,10 @@ class AppRouter {
         path: '/payments',
         builder: (context, state) => const PaymentsPage(),
       ),
-      GoRoute(path: '/inbox', builder: (context, state) => const PatientInboxPage()),
+      GoRoute(
+        path: '/inbox',
+        builder: (context, state) => const PatientInboxPage(),
+      ),
       GoRoute(
         path: '/doctor-videos',
         builder: (context, state) => const DoctorVideosPage(),
@@ -80,9 +85,6 @@ class AppRouter {
         builder: (context, state) => const SpecialitiesPage(),
       ),
       GoRoute(path: '/logout', builder: (context, state) => const SignInPage()),
-
-
-
 
       // Main app shell with bottom navigation
       StatefulShellRoute.indexedStack(
